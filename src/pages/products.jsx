@@ -12,11 +12,11 @@ export default function Products() {
     let BASE_URL = "";
 
     if (process.env.NODE_ENV === "development") {
-      BASE_URL = "http://localhost:3306/products";
+      BASE_URL = "http://localhost:3306/all-products";
     } else if (process.env.NODE_ENV === "production") {
-      BASE_URL = "https://ecomv2-1.onrender.com:3306/products";
+      BASE_URL = "https://ecomv2-dev.onrender.com/all-products";
     }
-
+    // BASE_URL = "http://localhost:3306/all-products";
     fetch(BASE_URL)
       .then((response) => response.json())
       .then((data) => setItems(data))
