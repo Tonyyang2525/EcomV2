@@ -9,7 +9,15 @@ export default function Products() {
   const [checkedList, setCheckedList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3306/")
+    let BASE_URL = "";
+
+    if (process.env.NODE_ENV === "development") {
+      BASE_URL = "http://localhost:3306/products";
+    } else if (process.env.NODE_ENV === "production") {
+      BASE_URL = "https://ecomv2-1.onrender.com:3306/products";
+    }
+
+    fetch(BASE_URL)
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) => console.error(error));
