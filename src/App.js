@@ -7,24 +7,6 @@ import Nav from "./components/nav";
 import PageNotFound from "./pages/PageNotFound";
 import Footer from "./components/footer";
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-//   {
-//     path: "/about",
-//     element: <About />,
-//   },
-//   {
-//     path: "/contact",
-//     element: <Contact />,
-//   },
-//   {
-//     path: "*",
-//     element: <PageNotFound />,
-//   },
-// ]);
 function App() {
   return (
     <Router>
