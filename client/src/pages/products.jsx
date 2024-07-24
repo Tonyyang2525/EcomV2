@@ -16,6 +16,15 @@ export default function Products() {
 
   if (!items) return null;
 
+  let filteredItems = items;
+
+  // Sorting logic based on checkedList for price
+  if (checkedList.includes("lowToHigh")) {
+    filteredItems = [...items].sort((a, b) => a.price - b.price); // Low to High
+  } else if (checkedList.includes("highToLow")) {
+    filteredItems = [...items].sort((a, b) => b.price - a.price); // High to Low
+  }
+
   return (
     <div className="products-container">
       <h1>Shop</h1>
@@ -26,7 +35,7 @@ export default function Products() {
       />
 
       <div className="products-list">
-        {items
+        {filteredItems
           .filter((product) =>
             checkedList.length === 0
               ? true
