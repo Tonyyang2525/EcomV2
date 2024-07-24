@@ -11,13 +11,14 @@ export default function FilterSideBar({ checkedList, setCheckedList }) {
       setCheckedList(checkedList.filter((item) => item !== value));
     }
   };
+
   const onChangePrice = (e) => {
     const isChecked = e.target.checked;
     const value = e.target.value;
     if (isChecked) {
-      setCheckedList([...checkedList, value]);
+      setCheckedList([value]); // Set only the selected price sorting option
     } else {
-      setCheckedList(checkedList.filter((item) => item !== value));
+      setCheckedList([]); // Clear price sorting option
     }
   };
 
