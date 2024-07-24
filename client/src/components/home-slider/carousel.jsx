@@ -1,5 +1,7 @@
 import React from "react";
 import { Carousel } from "antd";
+//images for carousel
+// import ManHoldingFish from "../../images/ManHoldingFish.jpeg";
 const contentStyle = {
   margin: 0,
   height: "160px",
