@@ -1,20 +1,25 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const api = express.Router();
 const mysql = require("mysql2");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-app.use(express.static(path.join(__dirname, "build")));
+require("dotenv").config();
+
 app.use(cors());
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+//initialize api route
+app.use("/api", api);
 
 const db = mysql.createConnection({
-  host: "sql5.freesqldatabase.com",
-  user: "sql5720774",
-  password: "LSl29UCu8G",
-  database: "sql5720774",
-  port: 3306,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 db.connect((err) => {
@@ -24,8 +29,10 @@ db.connect((err) => {
   }
   console.log("Connected to database");
 });
-
-app.get("/all-products", (req, res) => {
+//creating the endpoint for the api route
+//root/api/products
+//root, means base url, our case localhost:3606/)
+api.get("/products", (req, res) => {
   const sql = "SELECT * FROM `Products`";
   db.query(sql, function (err, data) {
     if (err) {
@@ -35,10 +42,10 @@ app.get("/all-products", (req, res) => {
     }
   });
 });
-
+//render react pages from express
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
-app.listen(3306, () => {
-  console.log("Server started on port 3306");
+app.listen(process.env.DB_PORT, () => {
+  console.log("Server started on port " + process.env.DB_PORT);
 });
