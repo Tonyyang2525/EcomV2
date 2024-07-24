@@ -57,14 +57,6 @@ export default function Contact() {
           />
           {emailError && <p style={{ color: "red" }}>{emailError}</p>}
 
-          <label htmlFor="phone">Enter your phone number:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          />
-
           <label
             htmlFor="subject"
             style={{ display: "flex", marginTop: "1em" }}

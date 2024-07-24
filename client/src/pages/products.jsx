@@ -19,7 +19,6 @@ export default function Products() {
   return (
     <div className="products-container">
       <h1>Shop</h1>
-      <p>Welcome to the Shop, Full of gear for your adventure</p>
 
       <FilterSideBar
         checkedList={checkedList}
