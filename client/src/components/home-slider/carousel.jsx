@@ -8,22 +8,24 @@ const contentStyle = {
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
-  background: "#364d79",
+  background: "#31363F",
 };
 const App = () => (
   <>
     <Carousel arrows infinite={false}>
       <div>
-        <h3 style={contentStyle}>1</h3>
+        <h3 style={contentStyle}>USE CODE "DF10" TO GET 10% OFF!</h3>
       </div>
       <div>
-        <h3 style={contentStyle}>2</h3>
+        <h3 style={contentStyle}>CHECKOUT OUR SUMMER SALE!</h3>
       </div>
       <div>
-        <h3 style={contentStyle}>3</h3>
+        <h3 style={contentStyle}>BUY 1 GET 1 FREE</h3>
       </div>
       <div>
-        <h3 style={contentStyle}>4</h3>
+        <h3 style={contentStyle}>
+          JOIN OUR REWARDS PROGRAM AND GET 15% OFF YOUR NEXT ORDER
+        </h3>
       </div>
     </Carousel>
     <br />

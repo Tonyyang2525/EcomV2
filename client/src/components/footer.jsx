@@ -8,8 +8,9 @@ export default function Footer() {
         <div className="footer-section">
           <h4>About Us</h4>
           <p>
-            We are a team of passionate developers dedicated to creating amazing
-            web experiences.
+            We are a team of passionate Fishermen dedicated to providing an
+            amazing fishing experiences through our products. We are here to
+            help.
           </p>
         </div>
         <div className="footer-section">
@@ -61,7 +62,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Dynamic Fishing. All rights reserved.</p>
       </div>
     </footer>
   );

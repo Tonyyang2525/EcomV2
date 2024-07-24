@@ -4,10 +4,12 @@
   align-items: center;
   padding: 10px 20px;
   box-shadow: 0 0 10px rgba(128, 162, 213);
+  background-color: black;
+  color: white;
 }
 .brand-logo {
   background: white;
-  border: solid black 2px;
+  border: solid white 2px;
   border-radius: 50px;
 }
 .navbar-logo img {
@@ -30,7 +32,7 @@
 }
 
 .navbar-links ul li a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 18px;
 }

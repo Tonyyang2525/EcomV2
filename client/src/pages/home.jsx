@@ -14,6 +14,12 @@ export default function Home() {
       </div>
       <img src="./img/fishing-hero.jpeg" alt="Logo" className="hero-logo" />
       <Carousel />
+      <div className="exclusive-deal">
+        <h2>CHECKOUT OUR EXCLUSIVE CLUB MEMBER DEALS HERE</h2>
+        <Button type="primary" style={{ backgroundColor: "black" }}>
+          CLICK HERE
+        </Button>
+      </div>
     </div>
   );
 }
