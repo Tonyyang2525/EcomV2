@@ -6,6 +6,7 @@ export default function FilterPriceSlider({ setMin, setMax, min, max }) {
     <div style={{ width: "20%" }}>
       <Slider
         range
+        max={30}
         defaultValue={[min, max]}
         onChangeComplete={([min, max]) => [setMin(min), setMax(max)]}
       />
