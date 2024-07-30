@@ -1,5 +1,36 @@
 import React from "react";
 import "./css/footer.css";
+import SocialIcons from "./social-icons/social-icons";
+
+import {
+  InstagramOutlined,
+  FacebookOutlined,
+  TwitterOutlined,
+  LinkedinOutlined,
+} from "@ant-design/icons";
+
+const socialIconList = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com",
+    icon: <FacebookOutlined />,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com",
+    icon: <TwitterOutlined />,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com",
+    icon: <InstagramOutlined />,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: <LinkedinOutlined />,
+  },
+];
 
 export default function Footer() {
   return (
@@ -27,39 +58,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-section">
-          <h4>Follow Us</h4>
-          <div className="social-icons">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
+        <SocialIcons socialIconList={socialIconList} />
       </div>
       <div className="footer-bottom">
         <p>&copy; 2024 Dynamic Fishing. All rights reserved.</p>

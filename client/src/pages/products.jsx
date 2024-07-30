@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "antd";
 import "../components/css/products.css";
-import FilterSideBar from "../components/filter-side-bar";
+import FilterBrandCheckList from "../components/filter-brand-checklist";
+import FilterPriceSlider from "../components/filter-price-slider";
 
 export default function Products() {
   const [items, setItems] = useState(null);
   const [checkedList, setCheckedList] = useState([]);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(30);
 
   useEffect(() => {
+    // Fetch data from API
+    // react-app-api-url is set in .env
+    // save it in the environment so we can fetch the api endpoint dynamically based on the environment
     fetch(process.env.REACT_APP_API_URL)
       .then((response) => response.json())
       .then((data) => setItems(data))
@@ -27,13 +33,22 @@ export default function Products() {
 
   return (
     <div className="products-container">
-      <h1>Shop</h1>
+      <div className="filter-container">
+        <h1>Shop</h1>
 
-      <FilterSideBar
-        checkedList={checkedList}
-        setCheckedList={setCheckedList}
-      />
-
+        <FilterBrandCheckList
+          //pass props to filterBrandCheckList page
+          checkedList={checkedList}
+          setCheckedList={setCheckedList}
+        />
+        <FilterPriceSlider
+          //pass props to filterPriceSlider page
+          min={min}
+          max={max}
+          setMin={setMin}
+          setMax={setMax}
+        />
+      </div>
       <div className="products-list">
         {filteredItems
           .filter((product) =>
@@ -41,6 +56,7 @@ export default function Products() {
               ? true
               : checkedList.includes(product.brand)
           )
+          .filter((product) => product.price >= min && product.price <= max)
           .map((product, index) => (
             <div key={index} className="product-item">
               <img src={`img/${product.img}`} alt={`Product ${index + 1}`} />

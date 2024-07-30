@@ -20,6 +20,7 @@ export default function Contact() {
   };
 
   const handleSubmit = (event) => {
+    // do not reload the page when submitting
     event.preventDefault();
     validateEmail();
     // Add further form submission logic here if needed
