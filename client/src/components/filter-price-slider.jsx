@@ -11,7 +11,7 @@ export default function FilterPriceSlider({ setMin, setMax, min, max }) {
         onChangeComplete={([min, max]) => [setMin(min), setMax(max)]}
       />
       <span>
-        Min: {min} - Max: {max}
+        Min: ${min} - Max: ${max}
       </span>
     </div>
   );
